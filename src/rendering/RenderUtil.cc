@@ -2554,7 +2554,10 @@ void RenderUtil::InitRenderEnginePluginPaths()
 {
   common::SystemPaths pluginPath;
   pluginPath.SetPluginPathEnv(kRenderPluginPathEnv);
+  ignerr << "MIRKO adding plugin path "<< kRenderPluginPathEnv << std::endl;
   rendering::setPluginPaths(pluginPath.PluginPaths());
+  for (const auto &s: pluginPath.PluginPaths())
+    ignerr<<s<<std::endl;
 }
 
 /////////////////////////////////////////////////
